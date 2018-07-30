@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:file="http://www.mulesoft.org/schema/mule/file"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<file:matcher name="Matcher" doc:name="Matcher" doc:id="ed014a8a-135d-46ee-8e20-eaf419b49a3b" filenamePattern="*" />
+	<flow name="json_xmlFlow" doc:id="b7d92b98-875a-41da-af2c-72e4b8b47d40" >
+		<file:listener doc:name="On New or Updated File" doc:id="6000cccb-69f9-4ce8-9376-b8b472d43264" directory="/home/reinaldo/Documents/AnypointStudio_Workspace/json_xml/input" moveToDirectory="/home/reinaldo/Documents/AnypointStudio_Workspace/json_xml/output" watermarkMode="CREATED_TIMESTAMP">
+			<ee:repeatable-file-store-stream />
+			<scheduling-strategy >
+				<fixed-frequency/>
+			</scheduling-strategy>
+		</file:listener>
+		<logger level="INFO" doc:name="InputLogger" doc:id="6660966f-7ce7-4609-b15f-bb84667c062c" message="#[payload]"/>
+		<ee:transform doc:name="Transform Message" doc:id="c34e11c1-166f-435d-ab32-a80baa6fce4b" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"NewStudent" : payload
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="OutputLogger" doc:id="8acb37f1-0ede-410c-8342-0acea9379d02" message="#[payload]"/>
+		<file:write doc:name="Write" doc:id="83dea1ff-e16b-4d26-b887-871d5276615a" path="/home/reinaldo/Documents/AnypointStudio_Workspace/json_xml/output/output.json"/>
+	</flow>
+</mule>

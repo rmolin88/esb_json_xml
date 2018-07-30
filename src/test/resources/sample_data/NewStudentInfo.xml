@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NewStudentInfo>
+  <StudID>2</StudID>
+  <Name>????</Name>
+  <SSN>????</SSN>
+  <EmailAddress>????</EmailAddress>
+  <HomePhone>????</HomePhone>
+  <HomeAddress>????</HomeAddress>
+  <LocalAddress>????</LocalAddress>
+  <EmergencyContact>????</EmergencyContact>
+  <ProgramID>????</ProgramID>
+  <PaymentID>????</PaymentID>
+  <AcademicStatus>2</AcademicStatus>
+</NewStudentInfo>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="NewStudentInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="StudID" type="xs:integer"/>
+				<xs:element name="Name" type="xs:string"/>
+				<xs:element name="SSN" type="xs:string"/>
+				<xs:element name="EmailAddress" type="xs:string"/>
+				<xs:element name="HomePhone" type="xs:string"/>
+				<xs:element name="HomeAddress" type="xs:string"/>
+				<xs:element name="LocalAddress" type="xs:string"/>
+				<xs:element name="EmergencyContact" type="xs:string"/>
+				<xs:element name="ProgramID" type="xs:string"/>
+				<xs:element name="PaymentID" type="xs:string"/>
+				<xs:element name="AcademicStatus" type="xs:integer"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

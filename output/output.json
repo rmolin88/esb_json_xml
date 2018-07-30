@@ -1,0 +1,17 @@
+{
+  "NewStudent": {
+    "NewStudentInfo": {
+      "StudID": "1111",
+      "Name": "Bob Smith",
+      "SSN": " 111-222-3333",
+      "EmailAddress": " bsmith@psu.edu",
+      "HomePhone": "215-222-2356",
+      "HomeAddress": "123 Tulip Road, Ambler, PA 19002",
+      "LocalAddress": " 321 College Ave., University Park, PA 16802",
+      "EmergencyContact": "John Smith",
+      "ProgramID": "206",
+      "PaymentID": "1111-206",
+      "AcademicStatus": "1"
+    }
+  }
+}
